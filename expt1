@@ -1,0 +1,32 @@
+import numpy as np
+c1=[1,1,1,1]
+c2=[1,-1,1,-1]
+c3=[1,1,-1,-1]
+c4=[1,-1,-1,1]
+rc=[]
+print("Enter the input data bits:")
+d1=int(input("Enter D1:"))
+d2=int(input("Enter D2:"))
+d3=int(input("Enter D3:"))
+d4=int(input("Enter D4:"))
+r1=np.multiply(c1,d1)
+r2=np.multiply(c2,d2)
+r3=np.multiply(c3,d3)
+r4=np.multiply(c4,d4)
+resultant=r1+r2+r3+r4
+print("Resultant is",resultant)
+c=int(input("Enter the station channel c1=1,c2=2,c3=3,c4=4"))
+if(c==1):
+    rc=c1
+elif(c==2):
+    rc=c2
+elif(c==3):
+    rc=c3
+else:
+    rc=c4
+    
+innerproduct=np.multiply(resultant,rc)
+print(innerproduct)
+res=sum(innerproduct)
+data=res/len(innerproduct)
+print(data)
